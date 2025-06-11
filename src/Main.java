@@ -1,6 +1,7 @@
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
 import java.util.Scanner;
-import javax.swing.JOptionPane;
+import javax.swing.JFrame;
 //Will be a calculator that adds, subtracts, multiplies, and divides
 public class Main {
     static Scanner scan = new Scanner(System.in);
@@ -9,8 +10,10 @@ public class Main {
         // Eventually will look and function like calculator
         JFrame frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(900, 900);
+        frame.setSize(300, 400);
         frame.setVisible(true);
+        JButton button = new JButton("0");
+        button.setVisible(true);
 
         // This just does 2 numbers
         // ToDo Make it take in more numbers
