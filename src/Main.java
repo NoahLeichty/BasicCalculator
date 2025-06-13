@@ -11,9 +11,10 @@ public class Main {
         JFrame frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 400);
+        frame.setLocationRelativeTo(null);
+        frame.setLayout(new BorderLayout());
 
         // Buttons for caclulator
-        frame.setLayout(new BorderLayout());
         JButton buttonText = new JButton("");
         JButton buttonC = new JButton("c");
         JButton buttonBack = new JButton("Back");
@@ -37,13 +38,13 @@ public class Main {
         JPanel panel = new JPanel();
 
         // Adding buttons to frame
-        frame.add(buttonText);
-        frame.add(buttonC);
-        frame.add(buttonBack);
-        frame.add(buttonAdd);
-        frame.add(buttonSub);
-        frame.add(buttonMult);
-        frame.add(buttonDiv);
+        frame.add(buttonText, BorderLayout.PAGE_START);
+        frame.add(buttonC, BorderLayout.LINE_START);
+        frame.add(buttonBack, BorderLayout.AFTER_LINE_ENDS);
+        frame.add(buttonAdd, BorderLayout.AFTER_LINE_ENDS);
+        frame.add(buttonSub, BorderLayout.AFTER_LINE_ENDS);
+        frame.add(buttonMult, BorderLayout.AFTER_LINE_ENDS);
+        frame.add(buttonDiv, BorderLayout.AFTER_LINE_ENDS);
         frame.add(buttonDec);
         frame.add(buttonEquals);
         frame.add(button0);
