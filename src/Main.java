@@ -12,7 +12,6 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 400);
         frame.setLocationRelativeTo(null);
-        frame.setLayout(new BorderLayout());
 
         // Buttons for caclulator
         JButton buttonText = new JButton("");
@@ -22,8 +21,6 @@ public class Main {
         JButton buttonSub = new JButton("-");
         JButton buttonMult = new JButton("*");
         JButton buttonDiv = new JButton("/");
-        JButton buttonDec = new JButton(".");
-        JButton buttonEquals = new JButton("=");
         JButton button0 = new JButton("0");
         JButton button1 = new JButton("1");
         JButton button2 = new JButton("2");
@@ -34,19 +31,18 @@ public class Main {
         JButton button7 = new JButton("7");
         JButton button8 = new JButton("8");
         JButton button9 = new JButton("9");
-
-        JPanel panel = new JPanel();
+        JButton buttonDec = new JButton(".");
+        JButton buttonEquals = new JButton("=");
+        JPanel panel = new JPanel(new FlowLayout());
 
         // Adding buttons to frame
-        frame.add(buttonText, BorderLayout.PAGE_START);
-        frame.add(buttonC, BorderLayout.LINE_START);
-        frame.add(buttonBack, BorderLayout.AFTER_LINE_ENDS);
-        frame.add(buttonAdd, BorderLayout.AFTER_LINE_ENDS);
-        frame.add(buttonSub, BorderLayout.AFTER_LINE_ENDS);
-        frame.add(buttonMult, BorderLayout.AFTER_LINE_ENDS);
-        frame.add(buttonDiv, BorderLayout.AFTER_LINE_ENDS);
-        frame.add(buttonDec);
-        frame.add(buttonEquals);
+        frame.add(buttonText);
+        frame.add(buttonC);
+        frame.add(buttonBack);
+        frame.add(buttonAdd);
+        frame.add(buttonSub);
+        frame.add(buttonMult);
+        frame.add(buttonDiv);
         frame.add(button0);
         frame.add(button1);
         frame.add(button2);
@@ -57,32 +53,18 @@ public class Main {
         frame.add(button7);
         frame.add(button8);
         frame.add(button9);
+        frame.add(buttonDec);
+        frame.add(buttonEquals);
 
-        frame.setLayout(new GridLayout(5,4));
+        buttonText.setSize(300,50);
+        buttonC.setSize(50,25);
+        buttonBack.setSize(50,25);
+        buttonAdd.setSize(50,25);
+        buttonSub.setSize(50,25);
+        buttonMult.setSize(50,25);
+        buttonDiv.setSize(50,25);
+        buttonEquals.setSize(50,25);
+
         frame.setVisible(true);
-
-
-        // This just does 2 numbers
-        // ToDo Make it take in more numbers
-        // ToDo make the UI and User experience better
-        System.out.println("Enter your first number: ");
-        double num1 = scan.nextDouble();
-        System.out.println("Enter what operation you want to do (+,-,*,/) :");
-        String operation = scan.next();
-        System.out.println("Enter your second number: ");
-        double num2 = scan.nextDouble();
-
-        // This checks what operation the user chose and does it
-        if (operation.startsWith("+")){
-            System.out.println(num1 + num2);
-        } else if (operation.startsWith("-")) {
-            System.out.println(num1 - num2);
-        } else if (operation.startsWith("*")) {
-            System.out.println(num1 * num2);
-        } else if (operation.startsWith("/")) {
-            System.out.println(num1 / num2);
-        }else {
-            System.out.println("Not a valid operation!");
-        }
     }
 }
