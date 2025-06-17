@@ -13,10 +13,14 @@ public class Main {
         frame.setSize(300, 400);
         frame.setLocationRelativeTo(null);
 
+        JTextField textField = new JTextField();
+        textField = new JTextField();
+        textField.setHorizontalAlignment(JTextField.RIGHT);
+        textField.setEditable(false);
+        frame.add(textField, BorderLayout.NORTH);
+
         // Buttons for caclulator
-        JButton buttonText = new JButton("");
         JButton buttonC = new JButton("c");
-        JButton buttonBack = new JButton("Back");
         JButton buttonAdd = new JButton("+");
         JButton buttonSub = new JButton("-");
         JButton buttonMult = new JButton("*");
@@ -36,34 +40,24 @@ public class Main {
         JPanel panel = new JPanel(new FlowLayout());
 
         // Adding buttons to frame
-        frame.add(buttonText);
-        frame.add(buttonC);
-        frame.add(buttonBack);
-        frame.add(buttonAdd);
-        frame.add(buttonSub);
-        frame.add(buttonMult);
-        frame.add(buttonDiv);
-        frame.add(button0);
-        frame.add(button1);
-        frame.add(button2);
-        frame.add(button3);
-        frame.add(button4);
-        frame.add(button5);
-        frame.add(button6);
         frame.add(button7);
         frame.add(button8);
         frame.add(button9);
-        frame.add(buttonDec);
+        frame.add(buttonDiv);
+        frame.add(button4);
+        frame.add(button5);
+        frame.add(button6);
+        frame.add(buttonMult);
+        frame.add(button1);
+        frame.add(button2);
+        frame.add(button3);
+        frame.add(buttonSub);
+        frame.add(button0);
+        frame.add(buttonC);
         frame.add(buttonEquals);
+        frame.add(buttonAdd);
 
-        buttonText.setSize(300,50);
-        buttonC.setSize(50,25);
-        buttonBack.setSize(50,25);
-        buttonAdd.setSize(50,25);
-        buttonSub.setSize(50,25);
-        buttonMult.setSize(50,25);
-        buttonDiv.setSize(50,25);
-        buttonEquals.setSize(50,25);
+        frame.setLayout(new GridLayout(4,4));
 
         frame.setVisible(true);
     }
