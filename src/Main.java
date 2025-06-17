@@ -13,13 +13,13 @@ public class Main {
         frame.setSize(300, 400);
         frame.setLocationRelativeTo(null);
 
+        JPanel panel = new JPanel();
         JTextField textField = new JTextField();
-        textField = new JTextField();
-        textField.setHorizontalAlignment(JTextField.RIGHT);
         textField.setEditable(false);
-        frame.add(textField, BorderLayout.NORTH);
+        panel.add(textField);
 
         // Buttons for caclulator
+        JPanel panel1 = new JPanel(new FlowLayout());
         JButton buttonC = new JButton("c");
         JButton buttonAdd = new JButton("+");
         JButton buttonSub = new JButton("-");
@@ -37,27 +37,30 @@ public class Main {
         JButton button9 = new JButton("9");
         JButton buttonDec = new JButton(".");
         JButton buttonEquals = new JButton("=");
-        JPanel panel = new JPanel(new FlowLayout());
+
 
         // Adding buttons to frame
-        frame.add(button7);
-        frame.add(button8);
-        frame.add(button9);
-        frame.add(buttonDiv);
-        frame.add(button4);
-        frame.add(button5);
-        frame.add(button6);
-        frame.add(buttonMult);
-        frame.add(button1);
-        frame.add(button2);
-        frame.add(button3);
-        frame.add(buttonSub);
-        frame.add(button0);
-        frame.add(buttonC);
-        frame.add(buttonEquals);
-        frame.add(buttonAdd);
+        panel1.add(button7);
+        panel1.add(button8);
+        panel1.add(button9);
+        panel1.add(buttonDiv);
+        panel1.add(button4);
+        panel1.add(button5);
+        panel1.add(button6);
+        panel1.add(buttonMult);
+        panel1.add(button1);
+        panel1.add(button2);
+        panel1.add(button3);
+        panel1.add(buttonSub);
+        panel1.add(button0);
+        panel1.add(buttonC);
+        panel1.add(buttonEquals);
+        panel1.add(buttonAdd);
 
-        frame.setLayout(new GridLayout(4,4));
+        frame.add(panel);
+        frame.add(panel1);
+
+
 
         frame.setVisible(true);
     }
