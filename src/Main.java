@@ -13,13 +13,13 @@ public class Main {
         frame.setSize(300, 400);
         frame.setLocationRelativeTo(null);
 
-        JPanel panel = new JPanel();
+        JPanel panel = new JPanel(new BorderLayout());
         JTextField textField = new JTextField();
         textField.setEditable(false);
         panel.add(textField);
 
         // Buttons for caclulator
-        JPanel panel1 = new JPanel(new FlowLayout());
+        JPanel panel1 = new JPanel(new GridLayout(4,4));
         JButton buttonC = new JButton("c");
         JButton buttonAdd = new JButton("+");
         JButton buttonSub = new JButton("-");
@@ -57,8 +57,8 @@ public class Main {
         panel1.add(buttonEquals);
         panel1.add(buttonAdd);
 
-        frame.add(panel);
-        frame.add(panel1);
+        frame.add(panel, BorderLayout.NORTH);
+        frame.add(panel1, BorderLayout.CENTER);
 
 
 
