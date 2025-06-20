@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Scanner;
 import javax.swing.JFrame;
 //Will be a calculator that adds, subtracts, multiplies, and divides
@@ -13,7 +15,8 @@ public class Main {
         frame.setSize(300, 400);
         frame.setLocationRelativeTo(null);
 
-        JPanel panel = new JPanel(new BorderLayout());
+        // Adding text field to show calculations
+        JPanel panel = new JPanel();
         JTextField textField = new JTextField();
         textField.setEditable(false);
         panel.add(textField);
@@ -57,11 +60,19 @@ public class Main {
         panel1.add(buttonEquals);
         panel1.add(buttonAdd);
 
+        // Layout of frame
         frame.add(panel, BorderLayout.NORTH);
         frame.add(panel1, BorderLayout.CENTER);
 
-
-
+        // Makes frame visible
         frame.setVisible(true);
+
+        class MyButtonHandler implements ActionListener {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Button clicked!");
+            }
+        }
+
     }
 }
