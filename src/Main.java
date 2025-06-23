@@ -43,7 +43,9 @@ public class Main {
 
 
         // Adding buttons to frame
+        button7.addActionListener(new MyButtonHandler());
         panel1.add(button7);
+
         panel1.add(button8);
         panel1.add(button9);
         panel1.add(buttonDiv);
@@ -67,12 +69,12 @@ public class Main {
         // Makes frame visible
         frame.setVisible(true);
 
-        class MyButtonHandler implements ActionListener {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Button clicked!");
-            }
-        }
+    }
 
+    private static class MyButtonHandler implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Button clicked!");
+        }
     }
 }
