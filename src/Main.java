@@ -16,9 +16,10 @@ public class Main {
         frame.setLocationRelativeTo(null);
 
         // Adding text field to show calculations
-        JPanel panel = new JPanel();
+        JPanel panel = new JPanel(new BorderLayout());
         JTextField textField = new JTextField();
         textField.setEditable(false);
+        textField.setHorizontalAlignment(JTextField.RIGHT);
         panel.add(textField);
 
         // Buttons for caclulator
@@ -43,9 +44,7 @@ public class Main {
 
 
         // Adding buttons to frame
-        button7.addActionListener(new MyButtonHandler());
         panel1.add(button7);
-
         panel1.add(button8);
         panel1.add(button9);
         panel1.add(buttonDiv);
@@ -66,15 +65,13 @@ public class Main {
         frame.add(panel, BorderLayout.NORTH);
         frame.add(panel1, BorderLayout.CENTER);
 
+        button7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textField.setText("7");
+            }
+        });
         // Makes frame visible
         frame.setVisible(true);
-
-    }
-
-    private static class MyButtonHandler implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            System.out.println("Button clicked!");
-        }
     }
 }
