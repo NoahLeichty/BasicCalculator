@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,6 +6,10 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 //Will be a calculator that adds, subtracts, multiplies, and divides
 public class Main {
+
+    JTextField outputTextField;
+    JButton button7;
+
     static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
         // Creates the starting point of calculator
@@ -24,7 +27,6 @@ public class Main {
         panel.add(textField);
 
         // Buttons for caclulator
-        JPanel panel1 = new JPanel(new GridLayout(4,4));
         JButton buttonC = new JButton("c");
         JButton buttonAdd = new JButton("+");
         JButton buttonSub = new JButton("-");
@@ -43,8 +45,8 @@ public class Main {
         JButton buttonDec = new JButton(".");
         JButton buttonEquals = new JButton("=");
 
-
         // Adding buttons to frame
+        JPanel panel1 = new JPanel(new GridLayout(4,4));
         panel1.add(button7);
         panel1.add(button8);
         panel1.add(button9);
@@ -66,14 +68,15 @@ public class Main {
         frame.add(panel, BorderLayout.NORTH);
         frame.add(panel1, BorderLayout.CENTER);
 
-        button7.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String command = e.getActionCommand();
-                textField.setText("7");
-            }
-        });
         // Makes frame visible
         frame.setVisible(true);
+    }
+    class ButtonHandler implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e){
+            if (e.getSource() == button7){
+                outputTextField.setText("7");
+            }
+        }
     }
 }
