@@ -2,28 +2,27 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Scanner;
 import javax.swing.JFrame;
 //Will be a calculator that adds, subtracts, multiplies, and divides
 public class Main extends JFrame implements ActionListener {
 
-    private JTextField outputTextField;
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
-    private JButton button5;
-    private JButton button6;
-    private JButton button7;
-    private JButton button8;
-    private JButton button9;
-    private JButton button0;
-    private JButton buttonAdd;
-    private JButton buttonSub;
-    private JButton buttonMult;
-    private JButton buttonDiv;
-    private JButton buttonC;
-    private JButton buttonEquals;
+    JTextField outputTextField;
+    JButton button1;
+    JButton button2;
+    JButton button3;
+    JButton button4;
+    JButton button5;
+    JButton button6;
+    JButton button7;
+    JButton button8;
+    JButton button9;
+    JButton button0;
+    JButton buttonAdd;
+    JButton buttonSub;
+    JButton buttonMult;
+    JButton buttonDiv;
+    JButton buttonC;
+    JButton buttonEquals;
 
     public Main(){
         // Creates the starting point of calculator
@@ -135,21 +134,26 @@ public class Main extends JFrame implements ActionListener {
         } else if (e.getSource() == buttonC) {
             outputTextField.setText("");
         } else if (e.getSource() == buttonAdd) {
-            outputTextField.setText(outputTextField.getText() + "s");
+            outputTextField.setText(outputTextField.getText() + "+");
         } else if (e.getSource() == buttonSub) {
-            outputTextField.setText(outputTextField.getText() + "");
+            outputTextField.setText(outputTextField.getText() + "-");
         } else if (e.getSource() == buttonMult) {
-            outputTextField.setText(outputTextField.getText() + "");
+            outputTextField.setText(outputTextField.getText() + "X");
         } else if (e.getSource() == buttonDiv) {
-            outputTextField.setText(outputTextField.getText() + "");
+            outputTextField.setText(outputTextField.getText() + "/");
         } else if (e.getSource() == buttonEquals) {
-            outputTextField.setText(outputTextField.getText() + "");
+            if (outputTextField.getText().contains("+")) {
+                outputTextField.setText("addition");
+            } else if (outputTextField.getText().contains("-")) {
+                outputTextField.setText("subtraction");
+            } else if (outputTextField.getText().contains("X")) {
+                outputTextField.setText("multiplication");
+            } else if (outputTextField.getText().contains("/")) {
+                outputTextField.setText("division");
+            }
         }
-
     }
-
-    static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new Main());
+        SwingUtilities.invokeLater(Main::new);
     }
 }
