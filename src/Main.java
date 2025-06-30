@@ -143,9 +143,9 @@ public class Main extends JFrame implements ActionListener {
             outputTextField.setText(outputTextField.getText() + "/");
         } else if (e.getSource() == buttonEquals) {
             if (outputTextField.getText().contains("+")) {
-                outputTextField.setText("addition");
+                outputTextField.setText("");
             } else if (outputTextField.getText().contains("-")) {
-                outputTextField.setText("subtraction");
+                outputTextField.setText(outputTextField.getText());
             } else if (outputTextField.getText().contains("X")) {
                 outputTextField.setText("multiplication");
             } else if (outputTextField.getText().contains("/")) {
