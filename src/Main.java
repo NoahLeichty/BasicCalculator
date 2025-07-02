@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 //Will be a calculator that adds, subtracts, multiplies, and divides
 public class Main extends JFrame implements ActionListener {
 
+    // Setting Buttons
     JTextField outputTextField;
     JButton button1;
     JButton button2;
@@ -25,21 +26,23 @@ public class Main extends JFrame implements ActionListener {
     JButton buttonEquals;
 
     public Main(){
-        // Creates the starting point of calculator
-        // Eventually will look and function like calculator
+        // Sets Frame
         JFrame frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 400);
         frame.setLocationRelativeTo(null);
 
+        // Jpanels for layout
         JPanel panel = new JPanel(new BorderLayout());
         JPanel panel1 = new JPanel(new GridLayout(4,4));
 
+        // Text Field that displays numbers
         outputTextField = new JTextField();
         outputTextField.setEditable(false);
         outputTextField.setHorizontalAlignment(JTextField.RIGHT);
         panel.add(outputTextField);
 
+        // Adding buttons to frame and action listeners to buttons
         button7 = new JButton("7");
         button7.addActionListener(this);
         panel1.add(button7);
@@ -109,8 +112,14 @@ public class Main extends JFrame implements ActionListener {
 
         frame.setVisible(true);
     }
+    // Deals with action events
     @Override
     public void actionPerformed(ActionEvent e){
+        String input;
+        int number;
+        String operator;
+        int answer;
+
         if (e.getSource() == button7) {
             outputTextField.setText(outputTextField.getText() + "7");
         } else if (e.getSource() == button8) {
@@ -143,14 +152,18 @@ public class Main extends JFrame implements ActionListener {
             outputTextField.setText(outputTextField.getText() + "/");
         } else if (e.getSource() == buttonEquals) {
             if (outputTextField.getText().contains("+")) {
-                outputTextField.setText("");
+                outputTextField.setText(outputTextField.getText() + "=");
             } else if (outputTextField.getText().contains("-")) {
-                outputTextField.setText(outputTextField.getText());
+                outputTextField.setText(outputTextField.getText() + "=");
             } else if (outputTextField.getText().contains("X")) {
-                outputTextField.setText("multiplication");
+                outputTextField.setText(outputTextField.getText() + "=");
             } else if (outputTextField.getText().contains("/")) {
-                outputTextField.setText("division");
+                outputTextField.setText(outputTextField.getText() + "=");
+            } else {
+                outputTextField.setText("");
             }
+        } else {
+            outputTextField.setText("");
         }
     }
     public static void main(String[] args) {
