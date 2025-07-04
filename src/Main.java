@@ -29,6 +29,10 @@ public class Main extends JFrame implements ActionListener {
     int number2 = 0;
     String operator = "";
     int answer = 0;
+    Boolean add = false;
+    Boolean sub = false;
+    Boolean mult = false;
+    Boolean div = false;
 
     public Main(){
         // Sets Frame
@@ -143,27 +147,41 @@ public class Main extends JFrame implements ActionListener {
         } else if (e.getSource() == buttonC) {
             outputTextField.setText("");
         } else if (e.getSource() == buttonAdd) {
-            outputTextField.setText(outputTextField.getText() + "+");
+            number1 = Integer.parseInt(outputTextField.getText());
+            outputTextField.setText("");
+            add = true;
         } else if (e.getSource() == buttonSub) {
-            outputTextField.setText(outputTextField.getText() + "-");
+            number1 = Integer.parseInt(outputTextField.getText());
+            outputTextField.setText("");
+            sub = true;
         } else if (e.getSource() == buttonMult) {
-            outputTextField.setText(outputTextField.getText() + "X");
+            number1 = Integer.parseInt(outputTextField.getText());
+            outputTextField.setText("");
+            mult = true;
         } else if (e.getSource() == buttonDiv) {
-            outputTextField.setText(outputTextField.getText() + "/");
+            number1 = Integer.parseInt(outputTextField.getText());
+            outputTextField.setText("");
+            div = true;
         } else if (e.getSource() == buttonEquals) {
-            if (outputTextField.getText().contains("+")) {
-                outputTextField.setText(outputTextField.getText() + "+");
-            } else if (outputTextField.getText().contains("-")) {
-                outputTextField.setText(outputTextField.getText() + "=");
-            } else if (outputTextField.getText().contains("X")) {
-                outputTextField.setText(outputTextField.getText() + "=");
-            } else if (outputTextField.getText().contains("/")) {
-                outputTextField.setText(outputTextField.getText() + "=");
+            if (add = true) {
+                number2 = Integer.parseInt(outputTextField.getText());
+                number1 = number1 + number2;
+                outputTextField.setText(String.valueOf(number1));
+            } else if (sub = true) {
+                number2 = Integer.parseInt(outputTextField.getText());
+                number1 = number1 - number2;
+                outputTextField.setText(String.valueOf(number1));
+            } else if (mult = true) {
+                number2 = Integer.parseInt(outputTextField.getText());
+                number1 = number1 * number2;
+                outputTextField.setText(String.valueOf(number1));
+            } else if (div = true) {
+                number2 = Integer.parseInt(outputTextField.getText());
+                number1 = number1 / number2;
+                outputTextField.setText(String.valueOf(number1));
             } else {
                 outputTextField.setText("");
             }
-        } else {
-            outputTextField.setText("");
         }
     }
     public static void main(String[] args) {
