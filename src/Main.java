@@ -24,6 +24,11 @@ public class Main extends JFrame implements ActionListener {
     JButton buttonDiv;
     JButton buttonC;
     JButton buttonEquals;
+    String input = "";
+    int number1;
+    int number2 = 0;
+    String operator = "";
+    int answer = 0;
 
     public Main(){
         // Sets Frame
@@ -32,7 +37,7 @@ public class Main extends JFrame implements ActionListener {
         frame.setSize(300, 400);
         frame.setLocationRelativeTo(null);
 
-        // Jpanels for layout
+        // J panels for layout
         JPanel panel = new JPanel(new BorderLayout());
         JPanel panel1 = new JPanel(new GridLayout(4,4));
 
@@ -115,11 +120,6 @@ public class Main extends JFrame implements ActionListener {
     // Deals with action events
     @Override
     public void actionPerformed(ActionEvent e){
-        String input;
-        int number;
-        String operator;
-        int answer;
-
         if (e.getSource() == button7) {
             outputTextField.setText(outputTextField.getText() + "7");
         } else if (e.getSource() == button8) {
@@ -152,7 +152,7 @@ public class Main extends JFrame implements ActionListener {
             outputTextField.setText(outputTextField.getText() + "/");
         } else if (e.getSource() == buttonEquals) {
             if (outputTextField.getText().contains("+")) {
-                outputTextField.setText(outputTextField.getText() + "=");
+                outputTextField.setText(outputTextField.getText() + "+");
             } else if (outputTextField.getText().contains("-")) {
                 outputTextField.setText(outputTextField.getText() + "=");
             } else if (outputTextField.getText().contains("X")) {
