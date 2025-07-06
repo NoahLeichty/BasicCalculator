@@ -167,18 +167,22 @@ public class Main extends JFrame implements ActionListener {
                 number2 = Integer.parseInt(outputTextField.getText());
                 number1 = number1 + number2;
                 outputTextField.setText(String.valueOf(number1));
+                add = false;
             } else if (sub = true) {
                 number2 = Integer.parseInt(outputTextField.getText());
                 number1 = number1 - number2;
                 outputTextField.setText(String.valueOf(number1));
+                sub = false;
             } else if (mult = true) {
                 number2 = Integer.parseInt(outputTextField.getText());
                 number1 = number1 * number2;
                 outputTextField.setText(String.valueOf(number1));
+                mult = false;
             } else if (div = true) {
                 number2 = Integer.parseInt(outputTextField.getText());
                 number1 = number1 / number2;
                 outputTextField.setText(String.valueOf(number1));
+                div = false;
             } else {
                 outputTextField.setText("");
             }
