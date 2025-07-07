@@ -1,3 +1,4 @@
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -25,7 +26,7 @@ public class Main extends JFrame implements ActionListener {
     JButton buttonC;
     JButton buttonEquals;
     String input = "";
-    int number1;
+    int number1 = 0;
     int number2 = 0;
     String operator = "";
     int answer = 0;
@@ -163,29 +164,21 @@ public class Main extends JFrame implements ActionListener {
             outputTextField.setText("");
             div = true;
         } else if (e.getSource() == buttonEquals) {
-            if (add = true) {
-                number2 = Integer.parseInt(outputTextField.getText());
+            number2 = Integer.parseInt(outputTextField.getText());
+            if (add) {
                 number1 = number1 + number2;
-                outputTextField.setText(String.valueOf(number1));
-                add = false;
-            } else if (sub = true) {
-                number2 = Integer.parseInt(outputTextField.getText());
+            } else if (sub) {
                 number1 = number1 - number2;
-                outputTextField.setText(String.valueOf(number1));
-                sub = false;
-            } else if (mult = true) {
-                number2 = Integer.parseInt(outputTextField.getText());
+            } else if (mult) {
                 number1 = number1 * number2;
-                outputTextField.setText(String.valueOf(number1));
-                mult = false;
-            } else if (div = true) {
-                number2 = Integer.parseInt(outputTextField.getText());
+            } else if (div) {
                 number1 = number1 / number2;
-                outputTextField.setText(String.valueOf(number1));
-                div = false;
-            } else {
-                outputTextField.setText("");
             }
+            outputTextField.setText(String.valueOf(number1));
+            add = false;
+            sub = false;
+            mult = false;
+            div = false;
         }
     }
     public static void main(String[] args) {
