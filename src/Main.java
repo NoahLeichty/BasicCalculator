@@ -26,8 +26,8 @@ public class Main extends JFrame implements ActionListener {
     JButton buttonC;
     JButton buttonEquals;
     String input = "";
-    int number1 = 0;
-    int number2 = 0;
+    double number1 = 0;
+    double number2 = 0;
     String operator = "";
     int answer = 0;
     Boolean add = false;
@@ -148,23 +148,23 @@ public class Main extends JFrame implements ActionListener {
         } else if (e.getSource() == buttonC) {
             outputTextField.setText("");
         } else if (e.getSource() == buttonAdd) {
-            number1 = Integer.parseInt(outputTextField.getText());
+            number1 = Double.parseDouble(outputTextField.getText());
             outputTextField.setText("");
             add = true;
         } else if (e.getSource() == buttonSub) {
-            number1 = Integer.parseInt(outputTextField.getText());
+            number1 = Double.parseDouble(outputTextField.getText());
             outputTextField.setText("");
             sub = true;
         } else if (e.getSource() == buttonMult) {
-            number1 = Integer.parseInt(outputTextField.getText());
+            number1 = Double.parseDouble(outputTextField.getText());
             outputTextField.setText("");
             mult = true;
         } else if (e.getSource() == buttonDiv) {
-            number1 = Integer.parseInt(outputTextField.getText());
+            number1 = Double.parseDouble(outputTextField.getText());
             outputTextField.setText("");
             div = true;
         } else if (e.getSource() == buttonEquals) {
-            number2 = Integer.parseInt(outputTextField.getText());
+            number2 = Double.parseDouble(outputTextField.getText());
             if (add) {
                 number1 = number1 + number2;
             } else if (sub) {
