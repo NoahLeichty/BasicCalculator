@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,7 +6,7 @@ import javax.swing.JFrame;
 //Will be a calculator that adds, subtracts, multiplies, and divides
 public class Main extends JFrame implements ActionListener {
 
-    // Setting Buttons
+    // Setting Buttons and variables
     JTextField outputTextField;
     JButton button1;
     JButton button2;
@@ -123,6 +122,7 @@ public class Main extends JFrame implements ActionListener {
         frame.setVisible(true);
     }
     // Deals with action events
+    // Makes each button do the correct action
     @Override
     public void actionPerformed(ActionEvent e){
         if (e.getSource() == button7) {
@@ -182,6 +182,7 @@ public class Main extends JFrame implements ActionListener {
         }
     }
     public static void main(String[] args) {
+        // Inputs into main
         SwingUtilities.invokeLater(Main::new);
     }
 }
